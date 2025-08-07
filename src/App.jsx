@@ -7,8 +7,18 @@ import { CheckCircle2, Circle, BookOpen, Trophy, Target } from 'lucide-react'
 import './App.css'
 
 const studyModules = [
-  {
+   {
     id: 1,
+    title: "Fundamentos de Python e OOP",
+    contents: [
+      "Revisão rápida de sintaxe Python (tipagem, listas, dicionários)",
+      "Classes, objetos, atributos e métodos",
+      "Encapsulamento, herança, polimorfismo, abstração"
+    ],
+    category: "Essencial"
+  }, 
+  {
+    id: 2,
     title: "Gerenciamento de Ambientes e Pacotes",
     contents: [
       "O que é PyPI e repositório de pacotes",
@@ -18,8 +28,18 @@ const studyModules = [
     category: "Essencial"
   },
   {
-    id: 2,
-    title: "Fundamentos de Python e OOP",
+    id: 3,
+    title: "Front-end Básico para Web",
+    contents: [
+      "HTML semântico",
+      "CSS: Flexbox, Grid e responsividade",
+      "JavaScript ES6+: DOM, fetch API, módulos"
+    ],
+    category: "Essencial"
+  },
+ {
+    id: 4,
+    title: "GIT",
     contents: [
       "Revisão rápida de sintaxe Python (tipagem, listas, dicionários)",
       "Classes, objetos, atributos e métodos",
@@ -27,37 +47,17 @@ const studyModules = [
     ],
     category: "Essencial"
   },
-  {
-    id: 3,
-    title: "Testes em Python",
-    contents: [
-      "Por que testar? tipos de teste (unitário, integração)",
-      "Introdução ao pytest: instalação, estrutura de testes",
-      "Asserções, fixtures, parametrização"
-    ],
-    category: "Essencial"
-  },
-  {
-    id: 4,
+   {
+    id: 5,
     title: "Design Patterns em Python",
     contents: [
       "Padrões criacionais (Factory, Singleton, Builder)",
       "Padrões estruturais (Adapter, Decorator, Facade)",
       "Padrões comportamentais (Strategy, Observer)"
     ],
-    category: "Padrões e Redes"
+    category: "Intermediário"
   },
-  {
-    id: 5,
-    title: "Redes e Sockets",
-    contents: [
-      "Modelo OSI vs TCP/IP",
-      "IP, TCP, UDP, portas",
-      "Sockets em Python (socket module): cliente e servidor básicos"
-    ],
-    category: "Padrões e Redes"
-  },
-  {
+    {
     id: 6,
     title: "APIs REST",
     contents: [
@@ -65,7 +65,7 @@ const studyModules = [
       "Autenticação via token / OAuth",
       "Hands-on com Flask-RESTful ou Django REST Framework"
     ],
-    category: "APIs"
+    category: "Intermediário"
   },
   {
     id: 7,
@@ -75,66 +75,88 @@ const studyModules = [
       "Resolvers e integração com Django (Graphene-Django)",
       "Boas práticas de versionamento"
     ],
-    category: "APIs"
+    category: "Intermediário"
   },
+
   {
     id: 8,
-    title: "API Gateways & Microsserviços",
-    contents: [
-      "O papel de um API Gateway (roteamento, rate-limit, autenticação centralizada)",
-      "Exemplos: Kong, AWS API Gateway",
-      "Arquitetura de microsserviços conectados"
-    ],
-    category: "APIs"
-  },
-  {
-    id: 9,
     title: "Django – Fundamentos",
     contents: [
       "Estrutura de projeto: apps, URLs, views, templates",
       "ORM: models, migrations",
       "Admin, formulários, validações"
     ],
-    category: "Framework Django"
+    category: "Intermediário"
   },
+
   {
-    id: 10,
-    title: "Django – Recursos Avançados",
-    contents: [
-      "Autenticação e permissões (User, grupos)",
-      "Upload de arquivos e media settings",
-      "Internacionalização, signals e tasks assíncronas"
-    ],
-    category: "Framework Django"
-  },
-  {
-    id: 11,
-    title: "Front-end Básico para Web",
-    contents: [
-      "HTML semântico",
-      "CSS: Flexbox, Grid e responsividade",
-      "JavaScript ES6+: DOM, fetch API, módulos"
-    ],
-    category: "Front-end"
-  },
-  {
-    id: 12,
+    id: 9,
     title: "Deploy de Projetos Python",
     contents: [
       "Plataformas: Heroku, PythonAnywhere, AWS Elastic Beanstalk, Render, DigitalOcean App Platform",
       "CI/CD básico (GitHub Actions para testes e deploy automático)"
     ],
-    category: "Deploy"
-  }
+    category: "Intermediário"
+  },
+  {
+    id: 10,
+    title: "API Gateways & Microsserviços",
+    contents: [
+      "O papel de um API Gateway (roteamento, rate-limit, autenticação centralizada)",
+      "Exemplos: Kong, AWS API Gateway",
+      "Arquitetura de microsserviços conectados"
+    ],
+    category: "Avançado"
+  },
+{
+    id: 11,
+    title: "Testes em Python",
+    contents: [
+      "Por que testar? tipos de teste (unitário, integração)",
+      "Introdução ao pytest: instalação, estrutura de testes",
+      "Asserções, fixtures, parametrização"
+    ],
+    category: "Avançado"
+  },
+
+  {
+    id: 12,
+    title: "Redes e Sockets",
+    contents: [
+      "Modelo OSI vs TCP/IP",
+      "IP, TCP, UDP, portas",
+      "Sockets em Python (socket module): cliente e servidor básicos"
+    ],
+    category: "Avançado"
+  },
+  {
+    id: 13,
+    title: "Inteligência artificial, machine learning e deep learning",
+    contents: [
+      "Inteligência artificial, machine learning e deep learning",
+      "Engenharia de prompt",
+      "LLM ChatGPT"
+    ],
+    category: "Bônus"
+  },
+  {
+    id: 14,
+    title: "Análise de dados com Python, Pandas e Matplotlib",
+    contents: [
+      "Introdução à análise de dados",
+      "Pandas",
+      "Matplotlib",
+    ],
+    category: "Diferêncial"
+  },
 ]
 
 const categoryColors = {
   "Essencial": "bg-blue-100 text-blue-800 border-blue-200",
-  "Padrões e Redes": "bg-yellow-100 text-yellow-800 border-yellow-200",
-  "APIs": "bg-green-100 text-green-800 border-green-200",
-  "Framework Django": "bg-purple-100 text-purple-800 border-purple-200",
-  "Front-end": "bg-orange-100 text-orange-800 border-orange-200",
-  "Deploy": "bg-red-100 text-red-800 border-red-200"
+  "Intermediário": "bg-yellow-100 text-yellow-800 border-yellow-200",
+  "Avançado": "bg-purple-100 text-purple-800 border-purple-200",
+  "Bônus": "bg-orange-100 text-orange-800 border-orange-200",
+  "Diferêncial": "bg-red-100 text-red-800 border-red-200"
 }
 
 function App() {
@@ -192,9 +214,9 @@ function App() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold text-gray-900">
-                  Plano de Estudos de Programação
+                  Estuda isso Fabião meu brother
                 </h1>
-                <p className="text-gray-600">Trilha progressiva com foco em Python</p>
+                <p className="text-gray-600">Segue essa budega que vai te ensinar tudo o que precisa saber para se tornar um desenvolvedor Python profissional</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -258,34 +280,22 @@ function App() {
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <Target className="w-5 h-5 text-python-blue" />
-              <span>Como usar esta trilha</span>
+              <span>Como usar esta bagaça</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="p-4 bg-blue-50 rounded-lg">
-                <h3 className="font-semibold text-blue-900 mb-2">1. Essencial (Módulos 1–3)</h3>
-                <p className="text-sm text-blue-700">Estabeleça a base com ambientes, OOP e testes para garantir código organizado e confiável.</p>
+                <h3 className="font-semibold text-blue-900 mb-2">1. Essencial (Módulos 1–4)</h3>
+                <p className="text-sm text-blue-700">Estabeleça a base com ambientes, OOP e testes para garantir código organizado e confiável, controle de versionamento e frontend básico se for fazer aplicações web.</p>
               </div>
               <div className="p-4 bg-yellow-50 rounded-lg">
-                <h3 className="font-semibold text-yellow-900 mb-2">2. Padrões e Redes (Módulos 4–5)</h3>
-                <p className="text-sm text-yellow-700">Aprofunde em boas práticas de arquitetura e comunicação entre sistemas.</p>
+                <h3 className="font-semibold text-yellow-900 mb-2">2. Intermediário (Módulos 5–9)</h3>
+                <p className="text-sm text-yellow-700">Aprender sobre decisões de design patterns, API's e comunicações entre servidor e cliente + deploy de projetos.</p>
               </div>
               <div className="p-4 bg-green-50 rounded-lg">
-                <h3 className="font-semibold text-green-900 mb-2">3. APIs (Módulos 6–8)</h3>
-                <p className="text-sm text-green-700">Domine interfaces REST e GraphQL e os conceitos de microsserviços e gateways.</p>
-              </div>
-              <div className="p-4 bg-purple-50 rounded-lg">
-                <h3 className="font-semibold text-purple-900 mb-2">4. Framework Django (Módulos 9–10)</h3>
-                <p className="text-sm text-purple-700">Desenvolva aplicações completas com recursos básicos e avançados.</p>
-              </div>
-              <div className="p-4 bg-orange-50 rounded-lg">
-                <h3 className="font-semibold text-orange-900 mb-2">5. Front-end (Módulo 11)</h3>
-                <p className="text-sm text-orange-700">Adicione camadas de interface ao back-end usando HTML, CSS e JavaScript.</p>
-              </div>
-              <div className="p-4 bg-red-50 rounded-lg">
-                <h3 className="font-semibold text-red-900 mb-2">6. Deploy (Módulo 12)</h3>
-                <p className="text-sm text-red-700">Publique projetos em produção e implemente pipelines de CI/CD.</p>
+                <h3 className="font-semibold text-green-900 mb-2">3. Avançados (Módulos 10–12)</h3>
+                <p className="text-sm text-green-700">Dominar a completa programação em python, abstraindo o 100% que todo desenvolvedor python tem que saber</p>
               </div>
             </div>
           </CardContent>
@@ -375,10 +385,10 @@ function App() {
       <footer className="bg-python-blue text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-python-yellow font-semibold mb-2">
-            Trilha de Estudos de Programação Python
+            Trilha de Estudos de Programação Python para o Fabio
           </p>
           <p className="text-blue-200">
-            Organize seus estudos e acompanhe seu progresso de forma interativa
+            Segue essa budega que vai te ensinar tudo o que precisa saber para se tornar um desenvolvedor Python profissional.
           </p>
         </div>
       </footer>
